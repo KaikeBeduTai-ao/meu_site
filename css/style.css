@@ -1,0 +1,273 @@
+/* =========================================
+   VARIÁVEIS DE COR (CLARO E ESCURO)
+   ========================================= */
+:root {
+    --bg-color: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --accent: #111827;
+    --accent-hover: #374151;
+    --border: #e5e7eb;
+    --card-bg: #f9fafb;
+    --btn-text: #ffffff;
+    --tag-bg: #e5e7eb;
+}
+
+/* Variáveis ativadas quando o body tem a classe dark-mode */
+body.dark-mode {
+    --bg-color: #111827;
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+    --accent: #ffffff;
+    --accent-hover: #f3f4f6;
+    --border: #374151;
+    --card-bg: #1f2937;
+    --btn-text: #111827;
+    --tag-bg: #374151;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Centralização total e bonita na tela */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centraliza verticalmente */
+    min-height: 100vh; /* Ocupa 100% da altura da tela */
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.4s ease, color 0.4s ease; /* Transição suave de tema */
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* =========================================
+   BOTÃO DE TEMA
+   ========================================= */
+.theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -30px;
+}
+
+.btn-theme {
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 10px;
+}
+
+.btn-theme:hover {
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* =========================================
+   CABEÇALHO / HERO SECTION
+   ========================================= */
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    border: 4px solid var(--border);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: border-color 0.4s ease;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.bio {
+    max-width: 500px;
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+}
+
+.actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--btn-text);
+    border: 2px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-main);
+}
+
+/* =========================================
+   SEÇÕES (HABILIDADES E PROJETOS)
+   ========================================= */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Mantém o conteúdo das seções centralizado */
+    text-align: center;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    width: 100%;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background-color: var(--text-main);
+    color: var(--btn-text);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 100%;
+    text-align: left; /* Mantém o texto do card alinhado à esquerda para leitura */
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 32px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-color: var(--text-muted);
+}
+
+.project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-stack span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: var(--tag-bg);
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: var(--text-main);
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* Animação suave ao carregar a página */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividade para celulares e telas maiores */
+@media (min-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
